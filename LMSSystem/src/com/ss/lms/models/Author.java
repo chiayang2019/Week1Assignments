@@ -13,15 +13,18 @@ public class Author implements Serializable {
 	
 	private String authorName;	
 	
+	private String authorPhoneNumber;
+	
 	private List<Book> books;
 
 	public Author() {
 		
 	}
 	
-	public Author(Integer authorId, String authorName) {
+	public Author(Integer authorId, String authorName, String authorPhoneNumber) {
 		this.authorId = authorId;
 		this.authorName = authorName;
+		this.authorPhoneNumber = authorPhoneNumber;
 		this.books = new ArrayList<Book>();
 	}	
 
@@ -50,5 +53,23 @@ public class Author implements Serializable {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public String getAuthorPhoneNumber() {
+		return authorPhoneNumber;
+	}
+
+	public void setAuthorPhoneNumber(String authorPhoneNumber) {
+		this.authorPhoneNumber = authorPhoneNumber;
+	}
+
+	public List<Book> getBooks() {
+		return books;
+	}
+
+	public void setBooks(List<Book> books) {
+		this.books = books;
 	}		
+	
+	
 }
