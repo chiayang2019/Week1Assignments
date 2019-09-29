@@ -103,6 +103,7 @@ public class AuthorDao {
 	// Afia's method
 	
 	private String filepath = ("C:\\MYWORKSPACE\\Week1Assignments\\LMSSystem\\Data\\authorlist.txt");
+	private String filepath2 = ("./Data/authorlist.txt");
 	
 	
 	//method to read from file and save the data in an arraylist.
@@ -142,8 +143,9 @@ public class AuthorDao {
 		
 System.out.println("Coming into AuthDao -  writeToAuthor");
 		String tempFile = "temp.txt"; //temporary file where we will write the info and the replace it with the original file.
-		File oldFile = new File(filepath);
-System.out.println(oldFile);
+		//String tempFile = "./Data/authorlist2.txt";
+		//File oldFile = new File(filepath);
+//System.out.println(oldFile);
 		File newFile = new File(tempFile);
 System.out.println(newFile);
 		FileWriter fw;
@@ -153,11 +155,16 @@ System.out.println(newFile);
 				fw.write(newAuthorList.get(i).getAuthorId()+","+newAuthorList.get(i).getAuthorName()+","
 						+ newAuthorList.get(i).getAuthorPhoneNumber()+"\n");
 			}
-			oldFile.delete();
-			File dump = new File("C:\\MYWORKSPACE\\Week1Assignments\\LMSSystem\\Data\\authorlist.txt"); //creating a new file with the same file location and file name
-System.out.println("dump:  " + dump);			
+			//oldFile.delete();
+			//File dump = new File("c:\\MYWORKSPACE\\Week1Assignments\\LMSSystem\\Data\\authorlist.txt"); //creating a new file with the same file location and file name
+			File dump = new File("./Data/authorlist3.txt"); 
+			
+			System.out.println("dump:  " + dump);			
 			//newFile.renameTo(dump); //rename our temp file to original filename.
+
+			//newFile.renameTo(dump);
 			newFile.renameTo(dump);
+			
 System.out.println("newfile:  " + newFile);
 		
 			fw.close();

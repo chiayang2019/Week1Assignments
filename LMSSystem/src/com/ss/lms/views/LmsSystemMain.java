@@ -92,7 +92,7 @@ public class LmsSystemMain {
 			conti = scannerTask.nextLine();		
 			//scannerTask.close();
 			//c++;
-		} while(conti =="Y");			
+		} while(conti.equals("Y"));			
 		
 		System.out.println("Good bye!");	
 		scannerTask.close();
